@@ -297,7 +297,7 @@ Other Style Guides
     // best
     const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
     /* or */
-    import has from 'has';
+    import has from 'has'; // https://www.npmjs.com/package/has
     // ...
     console.log(has.call(object, key));
     ```
@@ -1704,7 +1704,7 @@ Other Style Guides
 ## Hoisting
 
   <a name="hoisting--about"></a><a name="14.1"></a>
-  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_Dead_Zone_and_errors_with_let). It’s important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their closest enclosing function scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_Dead_Zone_and_errors_with_let). It’s important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
     // we know this wouldn’t work (assuming there
@@ -1754,8 +1754,8 @@ Other Style Guides
     }
     ```
 
-  <a name="hoisting--named-expresions"></a><a name="14.3"></a>
-  - [14.3](#hoisting--named-expresions) Named function expressions hoist the variable name, not the function name or the function body.
+  <a name="hoisting--named-expresions"></a><a name="hoisting--named-expressions"></a><a name="14.3"></a>
+  - [14.3](#hoisting--named-expressions) Named function expressions hoist the variable name, not the function name or the function body.
 
     ```javascript
     function example() {
@@ -1957,6 +1957,7 @@ Other Style Guides
     const bar = a ** b - 5 % d;
 
     // bad
+    // one may be confused into thinking (a || b) && c
     if (a || b && c) {
       return d;
     }
@@ -1968,7 +1969,7 @@ Other Style Guides
     const bar = (a ** b) - (5 % d);
 
     // good
-    if ((a || b) && c) {
+    if (a || (b && c)) {
       return d;
     }
 
@@ -3169,7 +3170,7 @@ Other Style Guides
 ## Events
 
   <a name="events--hash"></a><a name="24.1"></a>
-  - [25.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - [25.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass an object literal (also known as a "hash")  instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
     ```javascript
     // bad
@@ -3590,7 +3591,7 @@ Other Style Guides
 
 (The MIT License)
 
-Copyright (c) 2014-2017 Airbnb
+Copyright (c) 2012 Airbnb
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

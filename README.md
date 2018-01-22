@@ -441,39 +441,39 @@ Other Style Guides
   <a name="arrays--bracket-newline"></a>
   - [4.7](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
 
-  ```javascript
-  // bad
-  const arr = [
-    [0, 1], [2, 3], [4, 5],
-  ];
+    ```javascript
+    // bad
+    const arr = [
+      [0, 1], [2, 3], [4, 5],
+    ];
 
-  const objectInArray = [{
-    id: 1,
-  }, {
-    id: 2,
-  }];
-
-  const numberInArray = [
-    1, 2,
-  ];
-
-  // good
-  const arr = [[0, 1], [2, 3], [4, 5]];
-
-  const objectInArray = [
-    {
+    const objectInArray = [{
       id: 1,
-    },
-    {
+    }, {
       id: 2,
-    },
-  ];
+    }];
 
-  const numberInArray = [
-    1,
-    2,
-  ];
-  ```
+    const numberInArray = [
+      1, 2,
+    ];
+
+    // good
+    const arr = [[0, 1], [2, 3], [4, 5]];
+
+    const objectInArray = [
+      {
+        id: 1,
+      },
+      {
+        id: 2,
+      },
+    ];
+
+    const numberInArray = [
+      1,
+      2,
+    ];
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1945,7 +1945,7 @@ Other Style Guides
     ```
 
   <a name="comparison--no-mixed-operators"></a>
-  - [15.8](#comparison--no-mixed-operators) Enclose operators in parentheses when they are mixed in a statement. When mixing arithmetic operators, do not mix `**` and `%` with themselves or with `+`, `-`, `*`, & `/`. eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
+  - [15.8](#comparison--no-mixed-operators) When mixing operators, enclose them in parentheses. The only exception is the standard arithmetic operators (`+`, `-`, `*`, & `/`) since their precedence is broadly understood. eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
 
     > Why? This improves readability and clarifies the developer’s intention.
 
@@ -3178,8 +3178,8 @@ Other Style Guides
 
     // ...
 
-    $(this).on('listingUpdated', (e, listingId) => {
-      // do something with listingId
+    $(this).on('listingUpdated', (e, listingID) => {
+      // do something with listingID
     });
     ```
 
@@ -3187,12 +3187,12 @@ Other Style Guides
 
     ```javascript
     // good
-    $(this).trigger('listingUpdated', { listingId: listing.id });
+    $(this).trigger('listingUpdated', { listingID: listing.id });
 
     // ...
 
     $(this).on('listingUpdated', (e, data) => {
-      // do something with data.listingId
+      // do something with data.listingID
     });
     ```
 
@@ -3562,7 +3562,7 @@ Other Style Guides
   - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
   - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
   - ![ca](https://raw.githubusercontent.com/fpmweb/javascript-style-guide/master/img/catala.png) **Catalan**: [fpmweb/javascript-style-guide](https://github.com/fpmweb/javascript-style-guide)
-  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [sivan/javascript-style-guide](https://github.com/sivan/javascript-style-guide)
+  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [yuche/javascript](https://github.com/yuche/javascript)
   - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [jigsawye/javascript](https://github.com/jigsawye/javascript)
   - ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **French**: [nmussy/javascript-style-guide](https://github.com/nmussy/javascript-style-guide)
   - ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
